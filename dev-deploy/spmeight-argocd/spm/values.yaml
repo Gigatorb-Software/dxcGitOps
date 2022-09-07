@@ -6,30 +6,26 @@
 # settings, in order to meet their system needs.
 ###############################################################################
 global:
-  license: accept # Set to 'accept' after reviewing all license agreements
+  license: accept 
   images:
-    # registry: &imageRegistry default-route-openshift-image-registry.roks-workload-ocp-public-ed1a03814f096c1e0c48d0de41f5ae2b-0000.ca-tor.containers.appdomain.cloud
-    registry: &imageRegistry image-registry.openshift-image-registry.svc:5000  
-    imageLibrary: 'jules-project'
+    registry: dxctektonspmregistry.azurecr.io  
+    imageLibrary: tekton-pipelines
     imagePrefix: ''
-    imageTag: 0.0.36
+    imageTag: latest
     pullPolicy: Always
-  # imagePullSecret:
-  #  secretName: 'registry-access'
-  #  username: 'iamapikey'
+    imagePullSecret:
+    secretName: registry-access
+    username: dxctektonspmregistry
   database:
     ## Database connection properties
-    type: DB2
-    dbName: curam
-    hostname: 10.50.20.8
-    port: 50000
-    username: db2inst1
-    # Name of pre-created secret containing database credentals
-    credsSecretName: ''
-    # The XOR-encrypted password of the DB2 user which will be injected into Liberty configuration
-    wlp_psw: '{xor}HCotPj4sbg=='
-    # The SPM-encrypted password injected into Bootstrap.properties
-    spm_psw: 'CGKyTxxHJ9yT7DcIHteH1w=='
+    type: ORA
+    dbName: oratest1
+    hostname: 20.92.88.155
+    port: 1521
+    username: oraadmin
+    credsSecretName: custom-db-secret
+    wlp_psw: '{xor}Lz4sLCgwLTs='
+    spm_psw: HlIxprF/66CsSSm6PON5+A==
     # Oracle Service name, where applicable
     serviceName: ''
     ssl:
@@ -40,9 +36,7 @@ global:
       secretKey: db2admin.arm
   ingress:
     enabled: true
-    tlsSecretName: testkube-tls
-    generateCert: true
-    hostname: dev.roks-workload-ocp-public-ed1a03814f096c1e0c48d0de41f5ae2b-0000.ca-tor.containers.appdomain.cloud
+    hostname: spm-openshift.apps.zv07q1kc.australiaeast.aroapp.io
   isam:
     enabled: false
   apps: {}

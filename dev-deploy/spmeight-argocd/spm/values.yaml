@@ -39,47 +39,47 @@ global:
     hostname: spm-openshift.apps.zv07q1kc.australiaeast.aroapp.io
   isam:
     enabled: false
-  apps: {}
- #    config:
- #      curam:
-  #       enabled: true
-  #       resources:
-  #         limits:
-  #           cpu: 2
-  #           memory: 4Gi
-  #         requests:
-  #           cpu: 1
-  #           memory: 2Gi
- #         ingressPath: /Curam
-  #     rest:
-  #       enabled: false
-  #     citizenportal:
-  #       enabled: false
-  #     curamwebservices:
-  #       enabled: false
-  #     curambirtviewer:
-  #       enabled: false
+  apps: 
+     config:
+       curam:
+         enabled: true
+         resources:
+           limits:
+             cpu: 2
+             memory: 4Gi
+           requests:
+             cpu: 1
+             memory: 2Gi
+          ingressPath: /Curam
+       rest:
+         enabled: false
+       citizenportal:
+         enabled: false
+       curamwebservices:
+         enabled: false
+       curambirtviewer:
+         enabled: false
 # Override values in 'apps' Chart
-apps: {}
-#   replicaCount: 1
-#   initialDelaySeconds: 60
-#   loginConfig:
-#     trace: true
-#   sessionConfig:
-#     sessionTimeout: 30m
-#     transactionTimeout: 3m
-#   defaultResources:
-#     requests:
-#       cpu: 0.5
-#       memory: 768Mi
-#     limits:
-#       cpu: 0.75
-#       memory: 1Gi
+apps: 
+   replicaCount: 1
+   initialDelaySeconds: 60
+   loginConfig:
+     trace: true
+   sessionConfig:
+     sessionTimeout: 30m
+     transactionTimeout: 3m
+   defaultResources:
+     requests:
+       cpu: 0.5
+       memory: 768Mi
+     limits:
+       cpu: 0.75
+       memory: 1Gi
 # Override values in 'batch' Chart
-batch: {}
-#   programs:
-#     queued:
-#       schedule: "*/30 * * * *"
+batch: 
+   programs:
+     queued:
+       schedule: "*/30 * * * *"
 # Override values in 'uawebapp' Chart
 uawebapp: {}
 #   replicaCount: 1
@@ -91,18 +91,18 @@ uawebapp: {}
 #     path: /universal/
 #   ingressPath: /universal
 # Override values in 'web' Chart
-web: {}
-#   replicaCount: 1
-#   readinessProbe:
-#     path: /CuramStatic/
-#     ingressPath: /DEVCuramStatic
+web: 
+   replicaCount: 1
+   readinessProbe:
+     path: /CuramStatic/
+     ingressPath: /DEVCuramStatic
 # Override values in 'xmlserver' Chart
 xmlserver: {}
-#  replicaCount: 1
-#   jvm:
-#      maxMemory: '-Djava.maxmemory=768m'
-#      threadStackSize: '-Djava.thread.stack.size=-Xss4m'
-#   config:
-#      socketTimeout: 60000
-#      threadPoolQueueSize: 200
-#      threadPoolSize: 6
+  replicaCount: 1
+   jvm:
+      maxMemory: '-Djava.maxmemory=768m'
+      threadStackSize: '-Djava.thread.stack.size=-Xss4m'
+   config:
+      socketTimeout: 60000
+      threadPoolQueueSize: 200
+      threadPoolSize: 6

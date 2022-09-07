@@ -1,11 +1,11 @@
 global: {}
 argocd-config:
-  repoUrl: "http://gogs.tools:3000/toolkit/gitops.git"
-  project: "openshift-gitops"
+  repoUrl: "https://github.com/Gigatorb-Software/dxcGitOps.git"
+  project: "spm-openshift"
   applicationTargets:
-  - targetRevision: master
+  - targetRevision: main
     createNamespace: false
-    targetNamespace: "jules-project"
+    targetNamespace: "tekton-pipelines"
     applications:
      - name: "spm"
        path: "dev-deploy/spmeight-argocd/spm"

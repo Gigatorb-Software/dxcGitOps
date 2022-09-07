@@ -13,7 +13,7 @@ global:
     imagePrefix: ''
     imageTag: latest
     pullPolicy: Always
-    imagePullSecret:
+  imagePullSecret:
     secretName: registry-access
     username: dxctektonspmregistry
   database:

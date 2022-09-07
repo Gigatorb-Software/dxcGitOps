@@ -3,7 +3,7 @@ version: 0.1.0
 name: spm
 dependencies:
   - name: spm
-    version: 0.0.36
+    version: v1
     repository: >-
-      http://artifactory-artifactory.tools:8082/artifactory/generic-local/jules-project
+      https://chartmuseum-tekton-pipelines.apps.zv07q1kc.australiaeast.aroapp.io/tekton-pipelines
 description: Chart to configure ArgoCD with the spm project and its applications

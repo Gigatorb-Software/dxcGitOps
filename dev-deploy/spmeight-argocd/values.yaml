@@ -1,13 +1,13 @@
 global: {}
 argocd-config:
-  repoUrl: "https://github.com/Gigatorb-Software/dxcGitOps.git"
-  project: "spm-openshift"
+  repoUrl: https://github.com/Gigatorb-Software/dxcGitOps.git
+  project: my-application
   applicationTargets:
   - targetRevision: main
     createNamespace: false
-    targetNamespace: "tekton-pipelines"
+    targetNamespace: tekton-pipelines
     applications:
-     - name: "spm"
-       path: "dev-deploy/spmeight-argocd/spm"
+     - name: spm
+       path: dev-deploy/spmeight-argocd/spm
        type: helm
      
